@@ -8,6 +8,7 @@ class Book {
 class UI {
   addbook(book) {
     if (book.authorName === "" || book.bookName === "" || book.ISBN === "") {
+      alert("Fill all the Fields Please!");
       return;
     }
     const element = document.createElement("tr");
