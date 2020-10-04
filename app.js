@@ -1,5 +1,3 @@
-const element = document.createElement("tr");
-
 class Book {
   constructor(authorName, bookName, ISBN) {
     this.authorName = authorName;
@@ -9,6 +7,7 @@ class Book {
 }
 class UI {
   addbook(book) {
+    const element = document.createElement("tr");
     element.innerHTML = ` <td>${book.authorName}</td> <td>${book.bookName}</td> <td>${book.ISBN}</td> `;
     document.querySelector("#table").appendChild(element);
     addLocalStroge(book);
@@ -48,6 +47,8 @@ window.onload = function () {
   getDataFromLocalStorge();
 };
 function getDataFromLocalStorge() {
+  const element = document.createElement("tr");
+
   if (localStorage.getItem("books") !== null) {
     for (var i of JSON.parse(localStorage.getItem("books"))) {
       console.log(i.authorName);
