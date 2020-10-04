@@ -7,6 +7,9 @@ class Book {
 }
 class UI {
   addbook(book) {
+    if (book.authorName === "" || book.bookName === "" || book.ISBN === "") {
+      return;
+    }
     const element = document.createElement("tr");
     element.innerHTML = ` <td>${book.authorName}</td> <td>${book.bookName}</td> <td>${book.ISBN}</td> `;
     document.querySelector("#table").appendChild(element);
